@@ -19,22 +19,21 @@ def split_crates_and_instructions(file_contents):
 def transform_crates(crates):
     
     crate_lines = crates.split("\n")
-    base_dict = {}
-    remaining_lines = []
+    final_output = {}
     value_positions  = []
     for lines in crate_lines:
         for i in range(0, len(lines)):
             if lines[i] != " " and lines[i] != "[" and lines[i] != "]":
-                base_dict[i] = []
+                final_output[i] = []
                 value_positions.append((lines[i], i))
      
    
     for value in value_positions:
-        for dict_values in base_dict:
-            if value[1] == dict_values:
-                base_dict[dict_values].append(value[0])
+        for output in final_output:
+            if value[1] == output:
+                final_output[output].append(value[0])
 
-    return base_dict
+    return final_output
 
         
 
