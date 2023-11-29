@@ -23,7 +23,6 @@ def transform_crates(crates):
     remaining_lines = []
     value_positions  = []
     for lines in crate_lines:
- 
         for i in range(0, len(lines)):
             if lines[i] != " " and lines[i] != "[" and lines[i] != "]":
                 base_dict[i] = []
