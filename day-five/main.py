@@ -2,9 +2,10 @@ def main():
     print("=== advent of code day five ===")
     main_input = read_file_contents("main-input.txt")
     example_input = read_file_contents("example-input.txt")
-    crates, instructions = split_crates_and_instructions(example_input)
+    crates, instructions = split_crates_and_instructions(main_input)
     final_result = execute_instructions(instructions, crates)
     print(final_result)
+   
 
 #split the instructions and crates into two pieces i can use
 def split_crates_and_instructions(file_contents):
@@ -40,10 +41,8 @@ def transform_crates(crates):
     for final in final_output:
         final_output[final].reverse()
         
-
-
-
-    return final_output
+    
+    return dict(sorted(final_output.items()))
 
         
 
@@ -55,16 +54,19 @@ def transform_instructions(instructions):
     separate_instructions = instructions.split("\n")
     all_instructions = []
     for instruction in separate_instructions:
+        split_instruction = instruction.split()
         stripped_instructions = []
-        for single_instructions in instruction:
-            if single_instructions.isnumeric():
-                stripped_instructions.append(single_instructions)
+        for split in split_instruction:
+            if split.isnumeric():
+                stripped_instructions.append(split)
         all_instructions.append(tuple(map(lambda a: int(a), stripped_instructions)))
+
         
     return all_instructions
 
 
 def execute_instructions(instructions,  crates):
+    print(crates)
     for instruction in instructions:
         crates = execute_instruction(instruction[0], instruction[1], instruction[2], crates)
     
@@ -79,11 +81,20 @@ def execute_instruction(move,point_from, point_to, crates):
         removed_items = []
 
         #minus one crate in from and append it to point to
+        
         for i in range(0, move):
-            if len(crates[point_from]) > 0:
-                removed_crate = crates[point_from].pop()
-                crates[point_to].append(removed_crate)
+        
+            if len(crates[point_from]) >= 1:
+                
+                removed_crates = crates[point_from][-move:]
+                for removed in removed_crates:
+        
+                    crates[point_to].append(removed)
+                    crates[point_from].remove(removed)
+                    
+                   
 
+        print(crates)
         return crates
         
 
