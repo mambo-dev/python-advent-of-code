@@ -2,7 +2,7 @@ def main():
     print("=== advent of code day five ===")
     main_input = read_file_contents("main-input.txt")
     example_input = read_file_contents("example-input.txt")
-    crates, instructions = split_crates_and_instructions(main_input)
+    crates, instructions = split_crates_and_instructions(example_input)
     final_result = execute_instructions(instructions, crates)
     print(final_result)
    
@@ -71,9 +71,9 @@ def execute_instructions(instructions,  crates):
         crates = execute_instruction(instruction[0], instruction[1], instruction[2], crates)
     
     top_items = []
-
     for crate in crates:
-        top_items.append(crates[crate][-1])
+        if len(crates[crate]) >= 1:
+            top_items.append(crates[crate][-1])
 
     return "".join(top_items)
 
@@ -88,11 +88,9 @@ def execute_instruction(move,point_from, point_to, crates):
                 
                 removed_crates = crates[point_from][-move:]
                 for removed in removed_crates:
-        
                     crates[point_to].append(removed)
                     crates[point_from].remove(removed)
                     
-                   
 
         print(crates)
         return crates
