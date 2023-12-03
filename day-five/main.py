@@ -2,10 +2,9 @@ def main():
     print("=== advent of code day five ===")
     main_input = read_file_contents("main-input.txt")
     example_input = read_file_contents("example-input.txt")
-    control_input = read_file_contents("another-input.txt")
     crates, instructions = split_crates_and_instructions(main_input)
     final_result = execute_instructions(instructions, crates)
-    print(final_result)
+    
    
 
 #split the instructions and crates into two pieces i can use
