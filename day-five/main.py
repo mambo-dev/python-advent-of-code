@@ -2,7 +2,8 @@ def main():
     print("=== advent of code day five ===")
     main_input = read_file_contents("main-input.txt")
     example_input = read_file_contents("example-input.txt")
-    crates, instructions = split_crates_and_instructions(example_input)
+    control_input = read_file_contents("another-input.txt")
+    crates, instructions = split_crates_and_instructions(main_input)
     final_result = execute_instructions(instructions, crates)
     print(final_result)
    
@@ -28,11 +29,12 @@ def transform_crates(crates):
                 positional_output[i] = []
                 value_positions.append((lines[i], i))
      
-   
+
     for value in value_positions:
         for output in positional_output:
             if value[1] == output:
                 positional_output[output].append(value[0])
+
     final_output = {}
     for output in positional_output:
         output_entry = positional_output[output]
@@ -61,14 +63,15 @@ def transform_instructions(instructions):
                 stripped_instructions.append(split)
         all_instructions.append(tuple(map(lambda a: int(a), stripped_instructions)))
 
-        
+
     return all_instructions
 
 
 def execute_instructions(instructions,  crates):
-    print(crates)
+    line  = 10
     for instruction in instructions:
-        crates = execute_instruction(instruction[0], instruction[1], instruction[2], crates)
+        line += 1
+        crates = execute_instruction(instruction[0], instruction[1], instruction[2], crates, line)
     
     top_items = []
     for crate in crates:
@@ -77,22 +80,16 @@ def execute_instructions(instructions,  crates):
 
     return "".join(top_items)
 
-def execute_instruction(move,point_from, point_to, crates):
+def execute_instruction(move,point_from, point_to, crates, line):
         removed_items = []
-
-        #minus one crate in from and append it to point to
-        
-        for i in range(0, move):
-        
-            if len(crates[point_from]) >= 1:
-                
-                removed_crates = crates[point_from][-move:]
-                for removed in removed_crates:
-                    crates[point_to].append(removed)
-                    crates[point_from].remove(removed)
-                    
-
         print(crates)
+        print("line", line, move,"moved","from",point_from,"to", point_to)
+        #minus one crate in from and append it to point to
+        if len(crates[point_from]) >= 1:
+          
+            removed_crates = crates[point_from][-move:]
+            crates[point_from] = crates[point_from][:-move]
+            crates[point_to].extend(removed_crates)
         return crates
         
 
