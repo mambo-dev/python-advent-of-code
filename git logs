@@ -1,0 +1,113 @@
+[33mcommit b63ccad231b39c959fa581e97b5fa531e4db35f4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Sun Dec 3 18:36:03 2023 +0300
+
+    complete day six part two
+
+[33mcommit db30a47c09f6a5fb6e1fae4419093ea5d13a384a[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Sun Dec 3 18:28:26 2023 +0300
+
+    complete day six part one
+
+[33mcommit 372abba6af87f304a966af31c12c19c676e85471[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Sun Dec 3 16:16:41 2023 +0300
+
+    advent day 6 start
+
+[33mcommit 50978bf1888bec1d51c8a7f80ccebd30b490b034[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Sun Dec 3 16:05:05 2023 +0300
+
+    removed control input
+
+[33mcommit 80f129181c790aca5d1e95381e5a74283ba14d5a[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Sun Dec 3 16:04:20 2023 +0300
+
+    finish advent of code day 5..phew
+
+[33mcommit ed71681375f34a89b5ae067727b007a3e9586fad[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Thu Nov 30 19:52:53 2023 +0300
+
+    main input coming out incorrect
+
+[33mcommit 3743f083b838ec002df157cc2ac5ad0fb23c5bba[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Thu Nov 30 19:27:16 2023 +0300
+
+    modification of function to take all crates
+
+[33mcommit 07b664fb111742e356ab9d1928ff076d51705d8f[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Thu Nov 30 06:21:10 2023 +0300
+
+    complete execute instructions function
+
+[33mcommit 04afbaf137b5f557abf8bf90a4434468064da43f[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Nov 29 21:50:25 2023 +0300
+
+    rename output variable to improve readability
+
+[33mcommit 0b62344506b8f7a88d1e37db46b5edfe02b20feb[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Nov 29 21:47:53 2023 +0300
+
+    minor change
+
+[33mcommit 6f5663628413011346f9dc930eccf9bcc32da7b8[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Nov 29 21:46:56 2023 +0300
+
+    complete transform crates function
+
+[33mcommit cb2244e61371d667bb0919b1517e8895e1e85caf[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Nov 8 20:48:23 2023 +0300
+
+    day five start up
+
+[33mcommit 5caa2f0b3559fb191d819c97cc95c489de5c9452[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Nov 8 20:31:28 2023 +0300
+
+    initial setup
+
+[33mcommit 9d2c03ae6aab3384280da278ada85ec394642c5d[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Nov 8 20:17:52 2023 +0300
+
+    complete python day 4
+
+[33mcommit 3385807af64a8eaa82edf787c7e669fdd6010a16[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Thu Oct 26 12:14:39 2023 +0300
+
+    day four setup
+
+[33mcommit 11605cebeee9dba8494c553a5281610fdaa828c8[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Thu Oct 26 12:07:33 2023 +0300
+
+    complete day 3 part two
+
+[33mcommit a2c9c20e7be84d47019ebcb030c7bdaf83be77a9[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Oct 25 21:21:26 2023 +0300
+
+    removed txt files
+
+[33mcommit 44bf5e1c539aabc3152bb1ba65d4e6ca319ab1cc[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Oct 25 21:15:58 2023 +0300
+
+    add gitignore
+
+[33mcommit 058b00c3cbeb818a6ff0153235a6923aa4001e9d[m
+Author: mambo-dev <mambo.michael.22@gmail.com>
+Date:   Wed Oct 25 21:11:52 2023 +0300
+
+    complete day 3 part 1
