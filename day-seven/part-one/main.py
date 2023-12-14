@@ -14,9 +14,7 @@ def start_read_process(input):
         line = split_input[i]
         if line.startswith("$"):
             instruction = line.split()[1]
-            if instruction == "cd":
-                directory = line.split()[2]
-                current_directory = directory
+           
 
           
 
