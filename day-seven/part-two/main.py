@@ -27,11 +27,11 @@ def start_read_process(input):
     return solution, delete_directory
 
 def find_smallest_directory_to_delete(directories_list):
-    space_for_update = 30000000
+    space_needed_for_update = 30000000
     full_space = 70000000
     total_space_used = directories_list[0][1]
     remaining_space = full_space - total_space_used
-    space_to_be_cleared = space_for_update - remaining_space
+    space_to_be_cleared = space_needed_for_update - remaining_space
     size_to_be_deleted = 0
     all_eligible_sizes = []
     for directory in directories_list:
