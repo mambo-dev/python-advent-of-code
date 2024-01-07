@@ -13,6 +13,7 @@ def start_read_process(input):
     directories = build_up_directory_dict(split_input)
     total_size, sizes_list = find_directory_totals(directories)
     print("total", total_size, sizes_list)
+    
 
 def find_directory_totals(directories):
     
