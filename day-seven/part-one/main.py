@@ -4,7 +4,8 @@ def main():
     print("=== advent of code day seven ===")
     main_input = read_file_contents("main-input.txt")
     example_input = read_file_contents("example-input.txt")
-    largest_directories  = start_read_process(example_input) 
+    final  = start_read_process(main_input)
+
 
 
 def start_read_process(input):
@@ -12,7 +13,16 @@ def start_read_process(input):
     split_input = input.split("\n")
     directories = build_up_directory_dict(split_input)
     total_size, sizes_list = find_directory_totals(directories)
-    print("total", total_size, sizes_list)
+
+    at_most_100k = []
+    for sizes in sizes_list:
+        if sizes[1] <= 100000:
+            at_most_100k.append(sizes[1])
+    
+    solution = functools.reduce(lambda a,b: a +b, at_most_100k)
+
+    return solution
+
     
 
 def find_directory_totals(directories):
