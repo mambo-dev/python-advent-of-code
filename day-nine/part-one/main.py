@@ -15,7 +15,9 @@ def start_simulation(input):
 
     for input in input.split("\n"):
         if input[0] == "R":
-            move_right(current_positions, int(input[2]))
+           current_positions = move_right(current_positions, int(input[2]))
+        if input[0] == "U":
+            current_positions = move_up(current_positions, int(input[2]))
 
     #position name start, headPosition , tailPosition if head moves position to 1 then tail is 1 - 1, move to two tail is 2 -1
     pass
@@ -28,6 +30,17 @@ def move_right(positions, steps):
             positions["tail_position"] += 1
     
     return positions
+
+def move_up(positions, steps):
+    for i in range(0, steps):
+        positions["head_position"] += 1
+        difference = positions["head_position"] - positions["tail_position"]
+        if difference > 1:
+            positions["tail_position"] += 1
+    
+    return positions
+
+
 
 
 def read_file_contents(file_name):
