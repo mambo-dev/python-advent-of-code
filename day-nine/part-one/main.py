@@ -2,37 +2,32 @@ def main():
     print("=== advent of code day nine ===")
     main_input = read_file_contents("main-input.txt")
     example_input = read_file_contents("example-input.txt")
-    start_simulation(main_input)
+    start_simulation(example_input)
 
 
 def start_simulation(input):
-    highest_numbers = {
-        "R":0,
-        "D":0,
-        "U":0,
-        "L":0
-        }
 
-    input_by_line = input.split("\n")
-    for input in input_by_line:
-        input_by_space = input.split(" ")
-        if input_by_space[0] == "R":
-            if int(input_by_space[1]) > highest_numbers["R"]:
-                highest_numbers["R"] = int(input_by_space[1])
+    current_positions = {
+        "head_position":0,
+        "tail_position":0,
+        "start_position":0
+    }
 
-        elif input_by_space[0] == "D": 
-            if int(input_by_space[1]) > highest_numbers["D"]:
-                highest_numbers["D"] = int(input_by_space[1])
+    for input in input.split("\n"):
+        if input[0] == "R":
+            move_right(current_positions, int(input[2]))
 
-        elif input_by_space[0] == "U": 
-            if int(input_by_space[1]) > highest_numbers["U"]:
-                highest_numbers["U"] = int(input_by_space[1])
+    #position name start, headPosition , tailPosition if head moves position to 1 then tail is 1 - 1, move to two tail is 2 -1
+    pass
 
-        elif input_by_space[0] == "L": 
-            if int(input_by_space[1]) > highest_numbers["L"]:
-                highest_numbers["L"] = int(input_by_space[1])
-
-    print(highest_numbers)
+def move_right(positions, steps):
+    for i in range(0, steps):
+        positions["head_position"] += 1
+        difference = positions["head_position"] - positions["tail_position"]
+        if difference > 1:
+            positions["tail_position"] += 1
+    
+    return positions
 
 
 def read_file_contents(file_name):
